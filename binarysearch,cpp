@@ -1,0 +1,29 @@
+#include<vector>
+#include <iostream>
+int binarysearch(std::vector<int> v, int n ,int key){
+    int s =0;
+    int e = n-1;
+    int mid =(s+e)/2;
+    
+    while(s<=e)
+    {
+        if( v[mid] == key )
+        return mid;
+        if(mid< key)
+        s= mid+1;
+        else
+        e= mid -1;
+        mid = (s+e)/2;
+    }
+    
+    return -1;
+}
+
+int main()
+{
+   std::vector<int> v = {3,6,9,12,15,18};
+  int rslt =  binarysearch(v,v.size(),18);
+  std::cout<<"\n rslt ="<<rslt;
+
+    return 0;
+}
